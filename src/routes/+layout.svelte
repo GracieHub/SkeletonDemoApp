@@ -1,8 +1,15 @@
 <script>
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
-	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import "@skeletonlabs/skeleton/themes/theme-skeleton.css";
+	import "@skeletonlabs/skeleton/styles/all.css";
+	import "../app.postcss";
+	import { AppShell, AppBar } from "@skeletonlabs/skeleton";
+	import { getKeys } from "../environment";
+	import { onMount } from "svelte";
+	import { initFirebase } from "$lib/firebase-utils";
+
+	onMount(async () => {
+		initFirebase(getKeys().firebase);
+	});
 </script>
 
 <!-- App Shell -->
@@ -16,16 +23,16 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-	<!-- Insert the list: -->
-	<nav class="list-nav">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/scene-1">Module 1</a></li>
-			<li><a href="/scene-2">Module 2</a></li>
-		</ul>
-	</nav>
-	<!-- --- -->
-</svelte:fragment>
+		<!-- Insert the list: -->
+		<nav class="list-nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/scene-1">Module 1</a></li>
+				<li><a href="/scene-2">Module 2</a></li>
+			</ul>
+		</nav>
+		<!-- --- -->
+	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>

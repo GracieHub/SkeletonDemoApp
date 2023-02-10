@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Student } from '$lib/student-types';
-	import { Avatar } from '@skeletonlabs/skeleton';
-	import FaPhone from 'svelte-icons/fa/FaPhone.svelte';
-	import FaFacebookMessenger from 'svelte-icons/fa/FaFacebookMessenger.svelte';
+	import type { Student } from "$lib/student-types";
+	import { Avatar } from "@skeletonlabs/skeleton";
+	import FaPhone from "svelte-icons/fa/FaPhone.svelte";
+	import FaFacebookMessenger from "svelte-icons/fa/FaFacebookMessenger.svelte";
 
 	export let student: Student;
 </script>
@@ -15,16 +15,12 @@
 					<Avatar src={student.image} alt={student.name} class="mr-2" />
 					<h6>
 						{student.name}
-						<button
-							class="btn variant-filled-secondary btn-base ring-2 ring-primary-500 ring-inset text-filled-500"
-						>
+						<button class="btn variant-filled-secondary btn-base ring-2 ring-primary-500 ring-inset text-filled-500">
 							<div class="icon" style="color: orange; width: 16px; height:16px">
 								<FaFacebookMessenger />
 							</div>
 						</button>
-						<button
-							class="btn variant-filled-secondary btn-base ring-2 ring-primary-500 ring-inset text-filled-500"
-						>
+						<button class="btn variant-filled-secondary btn-base ring-2 ring-primary-500 ring-inset text-filled-500">
 							<div class="icon" style="color: green; width: 16px; height:16px">
 								<FaPhone />
 							</div>
